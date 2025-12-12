@@ -9,7 +9,7 @@ data["datetime"] = pd.to_datetime(data["datetime"], dayfirst=True, errors="coerc
 col_name = "solarRad"  # columna a analizar
 
 # --- RANGO DE DÍAS A USAR ---
-start_date = pd.to_datetime("12/05/2025", dayfirst=True)
+start_date = pd.to_datetime("11/05/2025", dayfirst=True)
 end_date   = pd.to_datetime("14/05/2025", dayfirst=True)
 mask = (data["datetime"] >= start_date) & (data["datetime"] <= end_date)
 data_range = data.loc[mask]

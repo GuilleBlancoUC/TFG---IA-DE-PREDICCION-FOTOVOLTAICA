@@ -18,12 +18,10 @@ result = pd.merge_asof(
 )
 
 # 2) Rellenar con 0 cuando no haya generación asociada (filas nocturnas)
-# ajusta el nombre de la columna si en tu CSV no es exactamente "Power_gen"
 result["Power_gen"] = result["Power_gen"].fillna(0)
 
 print(result.info())
 
-# A partir de aquí, sigues con tu limpieza de columnas meteo, etc.
 
 cols = ["temperature", "windSpeed", "solarRad", "humedad", "rain", "pressure"]
 
@@ -32,7 +30,6 @@ for c in cols:
     s = df[c].astype(str)
     # 1) Quitar todo lo que no sea dígito, punto o coma
     s = s.str.replace(r"[^0-9\.,-]", "", regex=True)
-    # 2) Si tu separador decimal es la coma, pásalo a punto
     s = s.str.replace(",", ".", regex=False)
     # 3) Convertir a float (no convertibles -> NaN)
     df[c] = pd.to_numeric(s, errors="coerce")
