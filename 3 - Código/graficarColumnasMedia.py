@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-dataset = 'CTC_processed.csv' #Lorca_original.csv para el de Lorca, Murcia
+dataset = 'Lorca_processed.csv' #Lorca_original.csv para el de Lorca, Murcia
                                 #CTC_processed.csv para el de Santander, Cantabria
 data = pd.read_csv(
         dataset,

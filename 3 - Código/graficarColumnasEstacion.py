@@ -21,7 +21,7 @@ def get_season(month):
 data["season"] = data["month"].apply(get_season)
 
 col_name = "solarRad"  # columna a analizar
-season_to_plot = "verano"  # "invierno", "primavera", "verano", "otoño"
+season_to_plot = "primavera"  # "invierno", "primavera", "verano", "otoño"
 
 data_season = data[data["season"] == season_to_plot]
 
