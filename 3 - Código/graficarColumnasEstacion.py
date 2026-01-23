@@ -1,7 +1,8 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-dataset = 'Lorca_processed.csv'
+dataset = 'Lorca_processed.csv' #Lorca_processed para el de Lorca, Murcia
+                                #CTC_processed.csv para el de Santander, Cantabria
 data = pd.read_csv(dataset, sep=";", low_memory=False)
 
 data["datetime"] = pd.to_datetime(data["datetime"], dayfirst=True, errors="coerce")
@@ -20,8 +21,8 @@ def get_season(month):
 
 data["season"] = data["month"].apply(get_season)
 
-col_name = "solarRad"  # columna a analizar
-season_to_plot = "primavera"  # "invierno", "primavera", "verano", "otoño"
+col_name = "solarRad" #Nombre de la columna
+season_to_plot = "otoño" #Estacion
 
 data_season = data[data["season"] == season_to_plot]
 
