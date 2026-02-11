@@ -1,8 +1,10 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import os
 
-dataset = 'Lorca_processed.csv' #Lorca_processed para el de Lorca, Murcia
-                                #CTC_processed.csv para el de Santander, Cantabria
+direccion = os.path.dirname(os.path.abspath(__file__))
+dataset = os.path.join(direccion,'..','CTC_processed.csv') #Lorca_processed para el de Lorca, Murcia
+                                                            #CTC_processed.csv para el de Santander, Cantabria
 data = pd.read_csv(dataset, sep=";", low_memory=False)
 
 data["datetime"] = pd.to_datetime(data["datetime"], dayfirst=True, errors="coerce")
