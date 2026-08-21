@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 import os
 
 direccion = os.path.dirname(os.path.abspath(__file__))
-dataset = os.path.join(direccion,'..','CTC_processed.csv') #Lorca_processed.csv para el de Lorca, Murcia
-                                #CTC_processed.csv para el de Santander, Cantabria
+dataset = os.path.join(direccion,'..','PlantaA_processed.csv') #Lorca_processed.csv para el de Lorca, Murcia
+                                #PlantaA_processed.csv para el emplazamiento A anonimizado
 data = pd.read_csv(
         dataset,
         sep=";",
